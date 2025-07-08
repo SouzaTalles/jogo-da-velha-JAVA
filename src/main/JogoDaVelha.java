@@ -1,6 +1,4 @@
-package main;
-
-import org.w3c.dom.ls.LSOutput;
+package src.main;
 
 import java.util.Scanner;
 
