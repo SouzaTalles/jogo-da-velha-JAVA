@@ -2,7 +2,7 @@ package src.modos_de_jogo;
 
 import java.util.Scanner;
 
-public class JogoDaVelha01 {
+public class JogoBase {
     private char[][] matriz;
     int jogador1;
     int jogador2;
@@ -88,11 +88,10 @@ public class JogoDaVelha01 {
                 }
             }
         }
-        if (numCasasOcupadas == 9) { // Todas as casas ocupadas
+        if (numCasasOcupadas == 9) {
             return 'E'; // Empate
         }
-
-        return 'N'; // Nenhum vencedor, nenhum empate, jogo continua
+        return 'N'; // Nenhum vencedor
     }
 
 
@@ -111,8 +110,8 @@ public class JogoDaVelha01 {
                 }
             }
         }
-        System.out.println("Esta posição já está ocupada. Escolha outra!"); // Se o loop terminar e não encontrou
-        return false; // Posição inválida (não encontrada)
+        System.out.println("Esta posição já está ocupada. Escolha outra!");
+        return false;
     }
 
     public void limparTela() {
@@ -155,14 +154,14 @@ public class JogoDaVelha01 {
                 System.out.println("Sua vez de jogar " + player2);
             }
             System.out.println("Qual posição deseja jogar?");
-            posicao = -1; // Valor inicial para garantir que entra no loop de validação
+            posicao = -1;
 
             while (true) {
                 if (scanner.hasNextInt()) {
                     posicao = scanner.nextInt();
 
-                    if (posicao >= 1 && posicao <= 9) { // Verifica se o numero esta no intervalo correto
-                        break; // Sai do loop de input se for um número válido
+                    if (posicao >= 1 && posicao <= 9) {
+                        break;
                     } else {
                         System.out.println("Por favor, digite um número entre 1 e 9.");
                     }
@@ -178,14 +177,17 @@ public class JogoDaVelha01 {
                 resultado = verificaResultado();
 
                 if (resultado == 'X' || resultado == 'O') {
+                    limparTela();
                     printTabuleiro();
                     System.out.println("\nParabéns, " + (resultado == 'X' ? player1 : player2) + " (" + resultado + ") você venceu!");
                     jogoTerminou = true;
                 }else if (resultado == 'E') {
-                    printTabuleiro(); // Mostra o tabuleiro final com o empate
+                    limparTela();
+                    printTabuleiro();
                     System.out.println("\n🤝🤝 Velha! Ninguém venceu. 🤝🤝");
                     jogoTerminou = true;
                 }else {
+                    limparTela();
                     mudaJogador();
                 }
             }else{
@@ -194,7 +196,6 @@ public class JogoDaVelha01 {
 
         }
         System.out.println("Jogo encerrado. Obrigado por jogar!");
-        scanner.close();
     }
 }
 
