@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public class JogoDaVelha01 {
     private char[][] matriz;
-    private int contador;
     int jogador1;
     int jogador2;
     char simbolo;
-    boolean jogadaFeita;
 
     public void inicializaçãoMatriz() {
         this.matriz = new char[3][3];
@@ -18,7 +16,7 @@ public class JogoDaVelha01 {
     }
 
     private void valoresNaMatriz() {
-        this.contador = 1;
+        int contador = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 matriz[i][j] = Character.forDigit(contador, 10);;
@@ -49,6 +47,54 @@ public class JogoDaVelha01 {
             simbolo = 'X';
         }
     }
+
+    public char verificaResultado() { // Retorna 'X', 'O', 'E' (Empate) ou 'N' (Nenhum)
+        // Verificação de linhas
+        for (int i = 0; i < 3; i++) {
+            if (matriz[i][0] == matriz[i][1] && matriz[i][1] == matriz[i][2]) {
+                if (matriz[i][0] == 'X' || matriz[i][0] == 'O') { // Garante que não é '1', '2', etc.
+                    return matriz[i][0]; // Retorna 'X' ou 'O'
+                }
+            }
+        }
+
+        // Verificação de colunas
+        for (int j = 0; j < 3; j++) {
+            if (matriz[0][j] == matriz[1][j] && matriz[1][j] == matriz[2][j]) {
+                if (matriz[0][j] == 'X' || matriz[0][j] == 'O') {
+                    return matriz[0][j]; // Retorna 'X' ou 'O'
+                }
+            }
+        }
+
+        // Verificação de diagonais
+        if (matriz[0][0] == matriz[1][1] && matriz[1][1] == matriz[2][2]) {
+            if (matriz[0][0] == 'X' || matriz[0][0] == 'O') {
+                return matriz[0][0]; // Retorna 'X' ou 'O'
+            }
+        }
+        if (matriz[0][2] == matriz[1][1] && matriz[1][1] == matriz[2][0]) {
+            if (matriz[0][2] == 'X' || matriz[0][2] == 'O') {
+                return matriz[0][2]; // Retorna 'X' ou 'O'
+            }
+        }
+
+        // Verificação de empate (se todas as casas estão ocupadas e não houve vitória)
+        int numCasasOcupadas = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matriz[i][j] == 'X' || matriz[i][j] == 'O') {
+                    numCasasOcupadas++;
+                }
+            }
+        }
+        if (numCasasOcupadas == 9) { // Todas as casas ocupadas
+            return 'E'; // Empate
+        }
+
+        return 'N'; // Nenhum vencedor, nenhum empate, jogo continua
+    }
+
 
     public boolean jogada(int posicao) {
         boolean mudou;
@@ -81,6 +127,9 @@ public class JogoDaVelha01 {
         int posicao;
         simbolo = 'X';
         int numJogadas = 0;
+        char resultado;
+        boolean jogoTerminou = false;
+        boolean jogadaFeita;
 
 
         System.out.println("=-==-=-==-=-==-=-==-=-==-=-==-=-==" +
@@ -98,7 +147,7 @@ public class JogoDaVelha01 {
 
         limparTela();
         inicializaçãoMatriz();
-        while (numJogadas < 9) {
+        while (!jogoTerminou) {
             printTabuleiro();
             if (jogador1 == 1) {
                 System.out.println("Sua vez de jogar " + player1);
@@ -125,13 +174,27 @@ public class JogoDaVelha01 {
             jogadaFeita = jogada(posicao);
             if (jogadaFeita) {
                 numJogadas++;
-                // verificar resultado
-                mudaJogador();
+
+                resultado = verificaResultado();
+
+                if (resultado == 'X' || resultado == 'O') {
+                    printTabuleiro();
+                    System.out.println("\nParabéns, " + (resultado == 'X' ? player1 : player2) + " (" + resultado + ") você venceu!");
+                    jogoTerminou = true;
+                }else if (resultado == 'E') {
+                    printTabuleiro(); // Mostra o tabuleiro final com o empate
+                    System.out.println("\n🤝🤝 Velha! Ninguém venceu. 🤝🤝");
+                    jogoTerminou = true;
+                }else {
+                    mudaJogador();
+                }
             }else{
                 System.out.println("Posição inválida. Tente novamente!");
             }
 
         }
+        System.out.println("Jogo encerrado. Obrigado por jogar!");
+        scanner.close();
     }
 }
 
