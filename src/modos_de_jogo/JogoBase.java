@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class JogoBase {
     private char[][] matriz;
-    int jogador1;
-    int jogador2;
-    char simbolo;
+    private int jogador1;
+    private int jogador2;
+    private char simbolo;
 
     public void inicializaçãoMatriz() {
         this.matriz = new char[3][3];
