@@ -1,5 +1,6 @@
 package src.main;
 
+import src.modos_de_jogo.Creditos;
 import src.modos_de_jogo.JogoBase;
 
 import java.util.Scanner;
@@ -8,6 +9,7 @@ public class JogoDaVelha {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         JogoBase jogoBase = new JogoBase();
+        Creditos creditos = new Creditos();
 
         do {
             System.out.println("\n--- Menu Principal ---");
@@ -37,6 +39,7 @@ public class JogoDaVelha {
                 case 3:
                     break;
                 case 4:
+                    creditos.exibirCreditos();
                     break;
             }
 
