@@ -23,7 +23,7 @@ public class JogoDaVelha {
             System.out.println("| 5 _ Sair                 |");
             System.out.println(" --------------------------");
 
-            System.out.println("Opção: ");
+            System.out.print("Opção: ");
             int opcao = scanner.nextInt();
 
             if (opcao < 1 || opcao > 5) {
