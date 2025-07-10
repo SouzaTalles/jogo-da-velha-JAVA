@@ -39,6 +39,7 @@ public class JogoDaVelha {
                     break;
                 case 5:
                     System.out.println("Saindo do jogo...");
+                    System.exit(0);
                     break;
             }
 
