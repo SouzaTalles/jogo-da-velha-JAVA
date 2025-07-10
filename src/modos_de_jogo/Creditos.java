@@ -6,9 +6,10 @@ public class Creditos {
     Scanner scanner = new Scanner(System.in);
 
     public void exibirCreditos() {
-        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=");
-        System.out.println("Escrever os créditos aqui");
-        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=\n");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=");
+        System.out.println("Jogo feito por: Eduardo Cardoso e Talles Souza");
+        System.out.println("Disciplina: Pensamento Computacional e Algoritmos");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=\n");
 
         System.out.println("Aperte enter para sair");
         scanner.nextLine();
