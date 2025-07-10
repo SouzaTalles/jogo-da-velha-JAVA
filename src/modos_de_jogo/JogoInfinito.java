@@ -7,7 +7,17 @@ public class JogoInfinito {
     private int jogador1;
     private int jogador2;
     private char simbolo;
-
+    private char resultado;
+    private int pecasXNoTabuleiro = 0;
+    private int pecasONoTabuleiro = 0;
+    int[] posicaoAtualX = new int[2];
+    int[] posicaoAtualO = new int[2];
+    int[] posicaoX1 = {-1, -1};
+    int[] posicaoX2 = {-1, -1};
+    int[] posicaoX3 = {-1, -1};
+    int[] posicaoO1 = {-1, -1};
+    int[] posicaoO2 = {-1, -1};
+    int[] posicaoO3 = {-1, -1};
 
     public void inicializaçãoMatriz() {
         this.matriz = new char[3][3];
@@ -60,12 +70,79 @@ public class JogoInfinito {
                         return false; // Jogada inválida
                     }
                     matriz[i][j] = simbolo; // Atribui o simbolo ('X' ou 'O')
-                    return true; // Jogada válida e feita
+
+                    if (simbolo == 'X') {
+                        posicaoAtualX[0] = i;
+                        posicaoAtualX[1] = j;
+                        pecasXNoTabuleiro++;
+                    }
+
+                    if (simbolo == 'O') {
+                        posicaoAtualO[0] = i;
+                        posicaoAtualO[1] = j;
+                        pecasONoTabuleiro++;
+                    }
+
+                    resultado = verificaResultado();
+
+                    if (resultado == 'N') {
+                        transferenciaValorDeVariavel();
+                    }
+                    return true;
                 }
             }
         }
         System.out.println("Esta posição já está ocupada. Escolha outra!");
         return false;
+    }
+
+    public void transferenciaValorDeVariavel() {
+        int linhaRemover;
+        int colunaRemover;
+
+        if (simbolo == 'X') {
+            posicaoX1[0] = posicaoX2[0];
+            posicaoX1[1] = posicaoX2[1];
+
+            posicaoX2[0] = posicaoX3[0];
+            posicaoX2[1] = posicaoX3[1];
+
+            posicaoX3[0] = posicaoAtualX[0];
+            posicaoX3[1] = posicaoAtualX[1];
+
+            if (pecasXNoTabuleiro > 2) {
+                linhaRemover = posicaoX1[0];
+                colunaRemover = posicaoX1[1];
+
+                if (linhaRemover != -1 && colunaRemover != -1) {
+                    int numeroCasa = linhaRemover * 3 + colunaRemover + 1;
+                    matriz[linhaRemover][colunaRemover] = Character.forDigit(numeroCasa, 10);
+                    pecasXNoTabuleiro--; // Decrementa, pois uma peça foi removida
+                }
+            }
+        }
+
+        if (simbolo == 'O') {
+            posicaoO1[0] = posicaoO2[0];
+            posicaoO1[1] = posicaoO2[1];
+
+            posicaoO2[0] = posicaoO3[0];
+            posicaoO2[1] = posicaoO3[1];
+
+            posicaoO3[0] = posicaoAtualO[0];
+            posicaoO3[1] = posicaoAtualO[1];
+
+            if (pecasONoTabuleiro > 2) {
+                linhaRemover = posicaoO1[0];
+                colunaRemover = posicaoO1[1];
+
+                if (linhaRemover != -1 && colunaRemover != -1) {
+                    int numeroCasa = linhaRemover * 3 + colunaRemover + 1;
+                    matriz[linhaRemover][colunaRemover] = Character.forDigit(numeroCasa, 10);
+                    pecasONoTabuleiro--;
+                }
+            }
+        }
     }
 
     public char verificaResultado() { // Retorna 'X', 'O', 'E' (Empate) ou 'N' (Nenhum)
@@ -99,7 +176,7 @@ public class JogoInfinito {
             }
         }
 
-        return 'N'; // Nenhum vencedor
+        return 'N';
     }
 
 
@@ -114,8 +191,6 @@ public class JogoInfinito {
         String player2;
         int posicao;
         simbolo = 'X';
-        int numJogadas = 0;
-        char resultado;
         boolean jogoTerminou = false;
         boolean jogadaFeita;
 
@@ -161,9 +236,6 @@ public class JogoInfinito {
             }
             jogadaFeita = jogada(posicao);
             if (jogadaFeita) {
-                numJogadas++;
-
-                resultado = verificaResultado();
 
                 if (resultado == 'X' || resultado == 'O') {
                     limparTela();
@@ -179,6 +251,8 @@ public class JogoInfinito {
             }
 
         }
-        System.out.println("Jogo encerrado. Obrigado por jogar!");
+        System.out.println("Jogo encerrado. Obrigado por jogar!\n");
+        System.out.println("Aperte enter para voltar ao menu do jogo");
+        scanner.nextLine();
     }
 }
