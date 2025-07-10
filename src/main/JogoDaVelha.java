@@ -15,14 +15,20 @@ public class JogoDaVelha {
         JogoInfinito jogoInfinito = new JogoInfinito();
         JogoDaVelhaComputador jogoComputador = new JogoDaVelhaComputador();
         do {
-            System.out.println("1 _ Contra outro Jogador");
-            System.out.println("2 _ Contra o Computador");
-            System.out.println("3 _ Modo Infinito");
-            System.out.println("4 _ Créditos");
-            System.out.println("5 _ Sair");
+            System.out.println("\n ----- Menu Principal -----");
+            System.out.println("| 1 _ Jogador vs Jogador   |");
+            System.out.println("| 2 _ Jogador vs Computador|");
+            System.out.println("| 3 _ Modo infinito        |");
+            System.out.println("| 4 _ Créditos             |");
+            System.out.println("| 5 _ Sair                 |");
+            System.out.println(" --------------------------");
 
             System.out.println("Opção: ");
             int opcao = scanner.nextInt();
+
+            if (opcao < 1 || opcao > 5) {
+            System.out.println("Opção inválida, tente novamente");
+            }
 
             switch (opcao) {
                 case 1:
