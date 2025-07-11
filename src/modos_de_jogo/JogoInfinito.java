@@ -254,5 +254,6 @@ public class JogoInfinito {
         System.out.println("Jogo encerrado. Obrigado por jogar!\n");
         System.out.println("Aperte enter para voltar ao menu do jogo");
         scanner.nextLine();
+        scanner.nextLine();
     }
 }
