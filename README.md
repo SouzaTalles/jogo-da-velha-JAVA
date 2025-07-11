@@ -68,35 +68,7 @@ Para executar o jogo em seu ambiente local, siga os passos abaixo:
 
 ## 4. Estrutura do jogo
 
-### 4.1.1 A estrutura das pastas
-
-Para uma visão clara da organização do projeto, observe a seguinte estrutura de diretórios:
-
-jogo-da-velha-JAVA/ 📂
-├── Images/ 🖼️
-├── out/ 
-│   └── production/ 
-│       └── jogo-da-velha-JAVA/ 📁
-│           └── src/ 
-│               ├── main/ 
-│               │   ├── JogoDaVelha.class
-│               │   └── test.class
-│               └── modos_de_jogo/ 
-│                   ├── Creditos.class
-│                   ├── JogoBase.class
-│                   ├── JogoDaVelhaComputador.class
-│                   └── JogoInfinito.class
-├── README.md
-└── src/ 
-    ├── main/ 
-    │   └── JogoDaVelha.java 
-    └── modos_de_jogo/ 
-        ├── Creditos.java 
-        ├── JogoBase.java 
-        ├── JogoDaVelhaComputador.java 
-        └── JogoInfinito.java 
-
-### 4.1.2 A arquitetura
+### 4.1 A arquitetura
 
 O projeto "Jogo da Velha JAVA" é estruturado em pacotes, seguindo princípios de Programação Orientada a Objetos para modularidade e organização.
 
