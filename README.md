@@ -68,13 +68,40 @@ Para executar o jogo em seu ambiente local, siga os passos abaixo:
 
 ## 4. Estrutura do jogo
 
-### 4.1 A arquitetura
+### 4.1.1 A estrutura das pastas
+
+Para uma visão clara da organização do projeto, observe a seguinte estrutura de diretórios:
+
+jogo-da-velha-JAVA/ 📂
+├── Images/ 🖼️
+├── out/ 
+│   └── production/ 
+│       └── jogo-da-velha-JAVA/ 📁
+│           └── src/ 
+│               ├── main/ 
+│               │   ├── JogoDaVelha.class
+│               │   └── test.class
+│               └── modos_de_jogo/ 
+│                   ├── Creditos.class
+│                   ├── JogoBase.class
+│                   ├── JogoDaVelhaComputador.class
+│                   └── JogoInfinito.class
+├── README.md
+└── src/ 
+    ├── main/ 
+    │   └── JogoDaVelha.java 
+    └── modos_de_jogo/ 
+        ├── Creditos.java 
+        ├── JogoBase.java 
+        ├── JogoDaVelhaComputador.java 
+        └── JogoInfinito.java 
+
+### 4.1.2 A arquitetura
 
 O projeto "Jogo da Velha JAVA" é estruturado em pacotes, seguindo princípios de Programação Orientada a Objetos para modularidade e organização.
 
 * **`src/main`**: Este pacote contém a classe principal que serve como ponto de entrada para o jogo:
     * `JogoDaVelha.java`: A classe principal que apresenta o menu de seleção de modos de jogo (Jogador vs. Jogador, Jogador vs. Computador, Modo Infinito e Créditos) e orquestra a execução dos diferentes modos.
-    * `test.java`: Uma classe simples para testar o `JogoInfinito` diretamente.
 
 * **`src/modos_de_jogo`**: Este pacote agrupa as classes que implementam a lógica para cada modo de jogo e funcionalidades auxiliares:
     * `JogoBase.java`: Define a lógica fundamental do jogo da velha para o modo Jogador vs. Jogador, incluindo a inicialização do tabuleiro, impressão, verificação de resultados (vitória, empate) e gerenciamento de jogadas e mudança de jogador.
