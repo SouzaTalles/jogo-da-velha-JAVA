@@ -41,14 +41,14 @@ Para executar o jogo em seu ambiente local, siga os passos abaixo:
 2.  **Clonar o Repositório:**
     Abra seu terminal ou prompt de comando e execute:
     ```bash
-    git clone [URL_DO_REPOSITORIO] # Substitua pela URL do seu repositório GitHub
+    git clone [https://github.com/SouzaTalles/jogo-da-velha-JAVA.git]
     ```
-3.  **Navegar até a pasta do projeto:**
+3.  **Entrar na pasta do projeto:**
     ```bash
     cd jogo-da-velha-JAVA/
     ```
 4.  **Executar o Jogo:**
-    Assumindo que os arquivos `.class` já foram compilados e estão na estrutura de diretórios `out/production/jogo-da-velha-JAVA/`, você pode rodar o jogo diretamente executando o seguinte comando na raiz do projeto:
+    Você pode rodar o jogo diretamente executando o seguinte comando na raiz do projeto:
     ```bash
     java -cp out/production/jogo-da-velha-JAVA/ src.main.JogoDaVelha
     ```
@@ -63,8 +63,8 @@ Para executar o jogo em seu ambiente local, siga os passos abaixo:
 <p align="justify"> &emsp; Foi desenvolvido um jogo da velha para ser jogado diretamente no terminal.</p>
 <p align="justify"> &emsp; Este projeto possui três modos de jogo: Jogador contra Jogador, Jogador contra Computador e um Modo Infinito.</p>
 <p align="justify"> &emsp; No primeiro modo, temos um tabuleiro padrão de jogo da velha 3x3, em que os jogadores jogam um de cada vez e ganha quem conseguir fazer uma sequência de peças iguais na diagonal, horizontal ou vertical.</p>
-<p align="justify"> Já o segundo modo é contra o computador, o jogador escolhe se vai começar a rodada ou não. O computador joga automaticamente toda vez que chega sua vez e então retorna para o jogador. </p>
-<p align="justify"> Por fim, o terceiro modo, chamado Modo Infinito, traz um jogo um pouco diferente. É um modo de jogador contra jogador, porém cada um possui apenas 3 peças durante todo o jogo. O objetivo continua o mesmo: fazer uma **sequência** em diagonal, horizontal ou vertical, porém, depois de colocar todas as suas três peças, o jogador irá retirar automaticamente a primeira peça que colocou e irá reposicioná-la em algum outro lugar do tabuleiro. </p>
+<p align="justify"> &emsp; Já o segundo modo é contra o computador, o jogador escolhe se vai começar a rodada ou não. O computador joga automaticamente toda vez que chega sua vez e então retorna para o jogador. </p>
+<p align="justify"> &emsp; Por fim, o terceiro modo, chamado Modo Infinito, traz um jogo um pouco diferente. É um modo de jogador contra jogador, porém cada um possui apenas 3 peças durante todo o jogo. O objetivo continua o mesmo: fazer uma **sequência** em diagonal, horizontal ou vertical, porém, depois de colocar todas as suas três peças, o jogador irá retirar automaticamente a primeira peça que colocou e irá reposicioná-la em algum outro lugar do tabuleiro. </p>
 
 ## 4. Estrutura do jogo
 
@@ -82,7 +82,7 @@ O projeto "Jogo da Velha JAVA" é estruturado em pacotes, seguindo princípios d
     * `JogoInfinito.java`: Implementa as regras específicas do "Modo Infinito", onde os jogadores têm um número limitado de peças e as mais antigas são removidas para novas jogadas.
     * `Creditos.java`: Exibe as informações sobre os criadores do jogo e a disciplina.
 
-As classes compartilham funcionalidades como `inicializaçãoMatriz()`, `printTabuleiro()`, `verificaResultado()`, `jogada()` e `limparTela()`, demonstrando uma estrutura coesa para o projeto.
+As classes compartilham funcionalidades como `inicializaçãoMatriz()`, `printTabuleiro()`, `verificaResultado()`, `jogada()` e `limparTela()`.
 
 ### 4.2 Fluxo de Gameplay
 
@@ -126,5 +126,5 @@ O jogo começa com o menu principal na classe `JogoDaVelha.java`. A partir daí,
 
 ## 5. Conclusão
 
-<p align="justify"> &emsp; A realização da referida atividade avaliativa foi de grande proveito, pois proporcionou pôr em prática todos os conhecimentos obtidos durante o semestre na **disciplina**. Desta forma, foi um grande exercício das habilidades.</p>
-<p align="justify"> &emsp; O projeto foi concluído com sucesso, atendendo **às diretrizes** desejadas, que era a criação de um jogo da velha com alguns modos de jogo. Há muitas possibilidades de expansão, sendo algumas delas a implementação de novas dificuldades no modo de jogo contra o computador, aumentar o tamanho **do tabuleiro**, dentre outros.</p>
+<p align="justify"> &emsp; A realização da referida atividade avaliativa foi de grande proveito, pois proporcionou pôr em prática todos os conhecimentos obtidos durante o semestre na disciplina. Desta forma, foi um grande exercício das habilidades.</p>
+<p align="justify"> &emsp; O projeto foi concluído com sucesso, atendendo às diretrizes desejadas, que era a criação de um jogo da velha com alguns modos de jogo. Há muitas possibilidades de expansão, sendo algumas delas a implementação de novas dificuldades no modo de jogo contra o computador, aumentar o tamanho **do tabuleiro**, dentre outros.</p>
