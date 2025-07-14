@@ -181,7 +181,7 @@ public class JogoInfinito {
 
 
     public void limparTela() {
-        System.out.print("\n\n\n\n\n\n");
+        System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 
     public void executarJogo() {
