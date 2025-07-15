@@ -30,7 +30,7 @@ public class JogoInfinito {
         int contador = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                matriz[i][j] = Character.forDigit(contador, 10);;
+                matriz[i][j] = Character.forDigit(contador, 10);
                 contador++;
             }
         }
@@ -60,8 +60,6 @@ public class JogoInfinito {
     }
 
     public boolean jogada(int posicao) {
-        boolean mudou;
-        mudou = false;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (Character.getNumericValue(matriz[i][j]) == posicao) {
@@ -195,15 +193,18 @@ public class JogoInfinito {
         boolean jogadaFeita;
 
 
-        System.out.println("=-==-=-==-=-==-=-==-=-==-=-==-=-==" +
-                "\n Bem vindo ao jogo da velha!" +
-                "\n Cadastre os jogadores abaixo\n" +
-                "=-==-=-==-=-==-=-==-=-==-=-==-=-==");
-        System.out.print("Player 1:" +
-                "\n--> ");
+        System.out.println("""
+                           =-==-=-==-=-==-=-==-=-==-=-==-=-==
+                            Bem vindo ao jogo da velha!
+                            Cadastre os jogadores abaixo
+                           =-==-=-==-=-==-=-==-=-==-=-==-=-==""");
+        System.out.print("""
+                         Player 1:
+                         --> """);
         player1 = scanner.nextLine();
-        System.out.print("Player 2: " +
-                "\n--> ");
+        System.out.print("""
+                         Player 2: 
+                         --> """);
         player2 = scanner.nextLine();
         System.out.println("Aperte enter para iniciar o jogo");
         scanner.nextLine();
