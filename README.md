@@ -149,5 +149,5 @@ O jogo começa com o menu principal na classe `JogoDaVelha.java`. A partir daí,
 
 ## 5. Conclusão
 
-<p align="justify"> &emsp; A realização da referida atividade avaliativa foi de grande proveito, pois proporcionou pôr em prática todos os conhecimentos obtidos durante o semestre na disciplina. Desta forma, foi um grande exercício das habilidades.</p>
-<p align="justify"> &emsp; O projeto foi concluído com sucesso, atendendo às diretrizes desejadas, que era a criação de um jogo da velha com alguns modos de jogo. Há muitas possibilidades de expansão, sendo algumas delas a implementação de novas dificuldades no modo de jogo contra o computador, aumentar o tamanho **do tabuleiro**, dentre outros.</p>
+<p align="justify"> &emsp; A realização desta atividade avaliativa foi de grande proveito, pois proporcionou pôr em prática todos os conhecimentos obtidos durante o semestre na disciplina. Desta forma, foi um grande exercício das habilidades.</p>
+<p align="justify"> &emsp; O projeto foi concluído com sucesso, atendendo às diretrizes desejadas, que era a criação de um jogo da velha com alguns modos de jogo. Há muitas possibilidades de expansão, sendo algumas delas a implementação de novas dificuldades no modo de jogo contra o computador, aumentar o tamanho do tabuleiro, dentre outros.</p>
